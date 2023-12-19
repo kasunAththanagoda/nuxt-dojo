@@ -10,10 +10,19 @@
   </template>
   
   <script setup>
+
+definePageMeta({
+      layout: "products",
+    })
+
     //  fetch the products
     const { data: products } = await useFetch('https://fakestoreapi.com/products')
   
-    definePageMeta({
-      layout: "products",
+    //seperate meta to product page
+    useHead({
+      title: "Nuxt Dojo | Merch",
+      meta: [
+        {name: 'description', content: 'Nuxt 3 Merch'}
+      ]
     })
   </script>
